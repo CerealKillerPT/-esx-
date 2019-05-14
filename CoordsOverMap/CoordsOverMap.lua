@@ -19,7 +19,7 @@ function Text(text)
 		SetTextEdge(1, 0, 0, 0, 205)
 		SetTextEntry("STRING")
 		AddTextComponentString(text)
-		DrawText(0.4, 0.01)
+		DrawText(0.42, 0.01)
 		-- DrawText(0.0175, 0.76)
 end
 
