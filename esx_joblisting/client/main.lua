@@ -20,10 +20,12 @@ function ShowJobListingMenu()
 		local elements = {}
 
 		for i=1, #jobs, 1 do
-			table.insert(elements, {
-				label = jobs[i].label,
-				job   = jobs[i].job
-			})
+			if jobs[i].job ~= 'police' and jobs[i].job ~= 'offpolice' and jobs[i].job ~= 'ambulance' and jobs[i].job ~= 'offambulance' and jobs[i].job ~= 'taxi' and jobs[i].job ~= 'mechanic' then
+				table.insert(elements, {
+					label = jobs[i].label,
+					job   = jobs[i].job
+				})
+			end
 		end
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'joblisting', {
@@ -32,7 +34,7 @@ function ShowJobListingMenu()
 			elements = elements
 		}, function(data, menu)
 			TriggerServerEvent('esx_joblisting:setJob', data.current.job)
-			ESX.ShowNotification(_U('new_job'))
+			ESX.ShowNotification('新工作')
 			menu.close()
 		end, function(data, menu)
 			menu.close()
@@ -62,7 +64,7 @@ Citizen.CreateThread(function()
 
 			if distance < (Config.ZoneSize.x / 2) then
 				isInMarker = true
-				ESX.ShowHelpNotification(_U('進入徵才中心'))
+				ESX.ShowHelpNotification('進入徵才中心')
 			end
 		end
 
@@ -89,7 +91,7 @@ Citizen.CreateThread(function()
 		SetBlipAsShortRange(blip, true)
 
 		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentSubstringPlayerName(_U('徵才中心'))
+		AddTextComponentSubstringPlayerName('徵才中心')
 		EndTextCommandSetBlipName(blip)
 	end
 end)
