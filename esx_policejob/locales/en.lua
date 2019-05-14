@@ -114,9 +114,9 @@ Locales['en'] = {
   ['male'] = 'male',
   ['female'] = 'female',
   -- Body Search Menu
-  ['guns_label'] = '--- Guns ---',
-  ['inventory_label'] = '--- Inventory ---',
-  ['license_label'] = ' --- Licenses ---',
+  ['guns_label'] = '--- 槍枝 ---',
+  ['inventory_label'] = '--- 背包 ---',
+  ['license_label'] = ' --- 執照 ---',
   ['confiscate'] = 'confiscate %s',
   ['confiscate_weapon'] = 'confiscate %s with %s bullets',
   ['confiscate_inv'] = 'confiscate %sx %s',

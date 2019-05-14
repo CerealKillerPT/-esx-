@@ -56,14 +56,14 @@ Locales['en'] = {
   ['fast_travel'] = '按下 ~INPUT_CONTEXT~ 來快速旅行.',
   ['open_pharmacy'] = '按下 ~INPUT_CONTEXT~ 來打開藥局',
   ['pharmacy_menu_title'] = '藥局',
-  ['pharmacy_take'] = '領取' <span style="color:blue;">%s</span>',
+  ['pharmacy_take'] = '領取 <span style="color:blue;">%s</span>',
   ['medikit'] = 'medikit',
   ['bandage'] = 'bandage',
   ['max_item'] = 'You are already carrying enough.',
   -- F6 Menu
   ['ems_menu'] = 'EMS menu',
   ['ems_menu_title'] = '救護 - EMS menu',
-  ['ems_menu_revive'] = '拯救 player',
+  ['ems_menu_revive'] = '拯救玩家',
   ['ems_menu_putincar'] = '移入載具中',
   ['ems_menu_small'] = '治療小傷口',
   ['ems_menu_big'] = '治療重大傷口',
@@ -82,9 +82,9 @@ Locales['en'] = {
   -- Revive
   ['revive_help'] = '拯救 player',
   -- Item
-  ['used_medikit'] = 'You have used ~y~1x~s~ medikit',
-  ['used_bandage'] = 'You have used ~y~1x~s~ bandage',
-  ['not_enough_medikit'] = '你 缺少 ~b~medikit~s~.',
-  ['not_enough_bandage'] = '你 缺少 ~b~bandage~s~.',
+  ['used_medikit'] = '你已使用 ~y~1x~s~ 醫療包',
+  ['used_bandage'] = '你已使用 ~y~1x~s~ 繃帶',
+  ['not_enough_medikit'] = '你 缺少 ~b~醫療包~s~.',
+  ['not_enough_bandage'] = '你 缺少 ~b~繃帶~s~.',
   ['healed'] = '你被治療',
 }
