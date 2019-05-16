@@ -135,7 +135,7 @@ Citizen.CreateThread(function()
 
                 -- Draw seatbelt status
                 local seatbeltColor = seatbeltIsOn and seatbeltColorOn or seatbeltColorOff
-                drawTxt("SEATBELT", 2, seatbeltColor, 0.4, screenPosX + 0.13, screenPosY + 0.75)
+                drawTxt("安全帶", 2, seatbeltColor, 0.4, screenPosX + 0.1, screenPosY + 0.72)   --改位置
             end
         else
             -- Reset states when not in car
