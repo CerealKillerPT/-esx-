@@ -67,7 +67,7 @@ function refreshBlips()
 		SetBlipColour (blip, Config.BlipPound.Color)
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("Deposito auto")
+		AddTextComponentString("儲存載具")
 		EndTextCommandSetBlipName(blip)
 	end
 end
@@ -96,7 +96,7 @@ function OpenMenuGarage(PointType)
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'garage_menu',
 		{
-			title    = 'Garage',
+			title    = '車庫',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -158,7 +158,7 @@ function ListVehiclesMenu()
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'spawn_vehicle',
 		{
-			title    = 'Garage',
+			title    = '車庫',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -205,7 +205,7 @@ function reparation(prix,vehicle,vehicleProps)
 				ranger(vehicle,vehicleProps)
 			end
 			if(data.current.value == 'no') then
-				ESX.ShowNotification('aspetta il meccanico')
+				ESX.ShowNotification('取消')
 			end
 
 		end,
@@ -312,7 +312,7 @@ AddEventHandler('eden_garage:hasEnteredMarker', function(zone)
 	
 	if zone == 'pound' then
 		CurrentAction     = 'pound_action_menu'
-		CurrentActionMsg  = "按下~INPUT_PICKUP~來扣押"
+		CurrentActionMsg  = "按下~INPUT_PICKUP~來領取"
 		CurrentActionData = {}
 	end
 end)
@@ -344,7 +344,7 @@ function ReturnVehicleMenu()
 		ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'return_vehicle',
 		{
-			title    = 'Garage',
+			title    = '車庫',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -363,7 +363,7 @@ function ReturnVehicleMenu()
 						end)
 					end
 				else
-					ESX.ShowNotification('Non hai abbastanza soldi')						
+					ESX.ShowNotification('現金不足')						
 				end
 			end)
 		end,

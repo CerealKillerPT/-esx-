@@ -106,7 +106,7 @@ AddEventHandler('eden_garage:pay', function()
 
 	xPlayer.removeMoney(Config.Price)
 
-	TriggerClientEvent('esx:showNotification', source, 'Hai pagato ' .. Config.Price)
+	TriggerClientEvent('esx:showNotification', source, '修理費： ' .. Config.Price)
 
 end)
 --Fin fonction qui retire argent
@@ -185,7 +185,7 @@ AddEventHandler('eden_garage:payhealth', function(price)
 
 	xPlayer.removeMoney(price)
 
-	TriggerClientEvent('esx:showNotification', source, 'Hai pagato ' .. price)
+	TriggerClientEvent('esx:showNotification', source, '修理費： ' .. price)
 
 end)
 --fin de payement pour la santé vehicule

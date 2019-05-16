@@ -49,7 +49,7 @@ Locales['en'] = {
   -- Boss Menu
   ['boss_actions'] = '老闆選項',
   -- Misc
-  ['invalid_amount'] = '~r~非法金額',
+  ['invalid_amount'] = '~r~ 非法金額',
   ['actions_prompt'] = '按下 ~INPUT_CONTEXT~ 來取得 ~y~救護車選單~s~.',
   ['deposit_amount'] = '儲存金額',
   ['money_withdraw'] = '領取金額',
@@ -57,9 +57,9 @@ Locales['en'] = {
   ['open_pharmacy'] = '按下 ~INPUT_CONTEXT~ 來打開藥局',
   ['pharmacy_menu_title'] = '藥局',
   ['pharmacy_take'] = '領取 <span style="color:blue;">%s</span>',
-  ['medikit'] = 'medikit',
-  ['bandage'] = 'bandage',
-  ['max_item'] = 'You are already carrying enough.',
+  ['medikit'] = '醫療包',
+  ['bandage'] = '繃帶',
+  ['max_item'] = '你已攜帶最大量',
   -- F6 Menu
   ['ems_menu'] = 'EMS menu',
   ['ems_menu_title'] = '救護 - EMS menu',
@@ -70,7 +70,7 @@ Locales['en'] = {
   -- Phone
   ['alert_ambulance'] = '救護警告',
   -- Death
-  ['respawn_available_in'] = '將於 in ~b~%s 分鐘 %s 秒~s~ 後可以進行復活',
+  ['respawn_available_in'] = '將於 ~b~%s 分鐘 %s 秒~s~ 後可以進行復活',
   ['respawn_bleedout_in'] = '你將於 in ~b~%s 分鐘 %s 秒~s~ 後失血\n',
   ['respawn_bleedout_prompt'] = '按住 [~b~E~s~] 來復活',
   ['respawn_bleedout_fine'] = '按住 [~b~E~s~] 來為復活 ~g~$%s~s~',

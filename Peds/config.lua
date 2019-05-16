@@ -14,8 +14,8 @@ Config.EnableDixon                = false   -- If true spawn Dixon at Nightclub 
 --Nightclub--
 
 --Biker DLC--
-Config.EnableDrugs                = true    -- If true spawn NPCs & Guards at Druglabors (Biker DLC)
-Config.EnableWeapons              = true    -- If true spawn Guards with Weapons (can change in ped.lua)
+Config.EnableDrugs                = false    -- If true spawn NPCs & Guards at Druglabors (Biker DLC)
+Config.EnableWeapons              = false    -- If true spawn Guards with Weapons (can change in ped.lua)
 --Biker DLC--
 
 

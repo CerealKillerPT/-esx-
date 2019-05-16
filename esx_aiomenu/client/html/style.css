@@ -20,8 +20,8 @@ body, html {
     height: 40px;
     min-width: 400px;
 	position: absolute;
-	right: 40px;
-	bottom: 539px;
+	left: 10vw;
+	top: 10vh;
 	background-color: #5772e6;
 	text-align: center;
 	line-height: 40px;
@@ -34,8 +34,8 @@ body, html {
     height: 40px;
     min-width: 400px;
 	position: absolute;
-	right: 40px;
-	bottom: 539px;
+	left: 10vw;
+	top: 10vh;
 	background-color: #5772e6;
 	text-align: center;
 	line-height: 40px;

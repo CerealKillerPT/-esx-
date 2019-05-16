@@ -59,8 +59,12 @@ Citizen.CreateThread(function()
                 --doesnt spam notifcations only shows top corner
                 hintToDisplay('按下 ~INPUT_CONTEXT~ 來洗 ~r~黑錢')
 				
-				if IsControlJustPressed(0, Keys['E']) then -- "E"
-					TriggerServerEvent('esx_blackmoney:washMoney')
+                if IsControlJustPressed(0, Keys['E']) then -- "E"
+                    if xPlayer.job.grade_name == 'boss' and xPlayer.job == 'gang' then
+                        TriggerServerEvent('esx_blackmoney:washMoney')
+                    else
+                        ESX.ShowNotification('叫你老大來')
+                    end
 				end			
             end
         end
