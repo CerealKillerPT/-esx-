@@ -74,7 +74,7 @@ Citizen.CreateThread(function()
     Citizen.Wait(0)
     local ped = GetPlayerPed(-1)
 
-    if IsPedSittingInAnyVehicle(ped) and IsDriver() and IsAppropriateVehicle() and hasMeterAppropriateJob() then
+    if IsDriver() and IsAppropriateVehicle() and hasMeterAppropriateJob() then
       meterOwner = true
 
       if IsControlPressed(0, Keys['LEFTCTRL']) and IsControlPressed(0, Keys['G']) then
