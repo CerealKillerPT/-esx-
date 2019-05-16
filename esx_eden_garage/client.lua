@@ -67,7 +67,7 @@ function refreshBlips()
 		SetBlipColour (blip, Config.BlipPound.Color)
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("儲存載具")
+		AddTextComponentString("車庫")
 		EndTextCommandSetBlipName(blip)
 	end
 end
@@ -137,9 +137,9 @@ function ListVehiclesMenu()
     		local labelvehicle
 			local plate = v.plate
 
-    		if(v.state)then
+    		if(v.state) and v.vehicle.job == nil then
     		labelvehicle = vehicleName.. ' (' .. plate .. '): 在車庫'
-    		else
+			elseif (v.state) and v.vehicle.job == nil then
     		labelvehicle = vehicleName.. ' (' .. plate .. '): 已取出'
     		end	
 			table.insert(elements, {label =labelvehicle , value = v})

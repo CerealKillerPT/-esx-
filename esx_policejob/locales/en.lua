@@ -2,7 +2,7 @@ Locales['en'] = {
   -- Cloakroom
   ['cloakroom'] = '員工休息室',
   ['citizen_wear'] = '一般服裝',
-  ['police_wear'] = '員警制伏',
+  ['police_wear'] = '員警制服',
   ['gilet_wear'] = '橘色反光背心',
   ['bullet_wear'] = '防彈背心',
   ['no_outfit'] = '沒有適合你的制服!',
