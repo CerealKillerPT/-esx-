@@ -137,9 +137,9 @@ function ListVehiclesMenu()
     		local labelvehicle
 			local plate = v.plate
 
-    		if(v.state) and v.vehicle.job == nil then
+    		if(v.state) and v.job == nil then
     		labelvehicle = vehicleName.. ' (' .. plate .. '): 在車庫'
-			elseif (v.state) and v.vehicle.job == nil then
+			elseif (v.state) and v.job == nil then
     		labelvehicle = vehicleName.. ' (' .. plate .. '): 已取出'
     		end	
 			table.insert(elements, {label =labelvehicle , value = v})
@@ -187,8 +187,8 @@ function reparation(prix,vehicle,vehicleProps)
 	ESX.UI.Menu.CloseAll()
 
 	local elements = {
-		{label = "Posa il veicolo ("..prix.."€)", value = 'yes'},
-		{label = "aspetta il meccanico", value = 'no'},
+		{label = "載具維修費用 ("..prix.."€)", value = 'yes'},
+		{label = "取消維修", value = 'no'},
 	}
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'delete_menu',
