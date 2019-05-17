@@ -16,14 +16,6 @@ Config.AuthorizedVehicles = {
 	{
 		model = 'taxi',
 		label = 'Taxi'
-	},
-	{
-		model = 'fq2',
-		label = 'FQ2'
-	},
-	{
-		model = 'comet2',
-		label = 'Comet2'
 	}
 }
 
