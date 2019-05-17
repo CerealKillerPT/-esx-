@@ -74,7 +74,7 @@ Citizen.CreateThread(function()
     Citizen.Wait(0)
     local ped = GetPlayerPed(-1)
 
-    if IsDriver() and IsAppropriateVehicle() and hasMeterAppropriateJob() then
+    if IsDriver() and hasMeterAppropriateJob() then  --允許UBER跳表
       meterOwner = true
 
       if IsControlPressed(0, Keys['LEFTCTRL']) and IsControlPressed(0, Keys['G']) then
