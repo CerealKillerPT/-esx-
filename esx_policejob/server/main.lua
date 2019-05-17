@@ -24,35 +24,37 @@ AddEventHandler('esx_policejob:confiscatePlayerItem', function(target, itemType,
 		local targetItem = targetXPlayer.getInventoryItem(itemName)
 		local sourceItem = sourceXPlayer.getInventoryItem(itemName)
 
-		-- does the target player have enough in their inventory?
+		-- does the target player have enough in their inventory?	 修正沒收會到警察手上
 		if targetItem.count > 0 and targetItem.count <= amount then
 		
 			-- can the player carry the said amount of x item?
-			if sourceItem.limit ~= -1 and (sourceItem.count + amount) > sourceItem.limit then
-				TriggerClientEvent('esx:showNotification', _source, _U('quantity_invalid'))
-			else
-				targetXPlayer.removeInventoryItem(itemName, amount)
-				sourceXPlayer.addInventoryItem   (itemName, amount)
-				TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated', amount, sourceItem.label, targetXPlayer.name))
-				TriggerClientEvent('esx:showNotification', target,  _U('got_confiscated', amount, sourceItem.label, sourceXPlayer.name))
-			end
+			-- if sourceItem.limit ~= -1 and (sourceItem.count + amount) > sourceItem.limit then
+			-- 	TriggerClientEvent('esx:showNotification', _source, _U('quantity_invalid'))
+			-- else
+			-- 	targetXPlayer.removeInventoryItem(itemName, amount)
+			-- 	--sourceXPlayer.addInventoryItem   (itemName, amount)
+			-- 	--TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated', amount, sourceItem.label, targetXPlayer.name))
+			-- 	TriggerClientEvent('esx:showNotification', target,  _U('got_confiscated', amount, sourceItem.label, sourceXPlayer.name))
+			-- end
+			targetXPlayer.removeInventoryItem(itemName, amount)
+			TriggerClientEvent('esx:showNotification', target,  _U('got_confiscated', amount, sourceItem.label, sourceXPlayer.name))
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('quantity_invalid'))
 		end
 
 	elseif itemType == 'item_account' then
 		targetXPlayer.removeAccountMoney(itemName, amount)
-		sourceXPlayer.addAccountMoney   (itemName, amount)
+		--sourceXPlayer.addAccountMoney   (itemName, amount)
 
-		TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated_account', amount, itemName, targetXPlayer.name))
+		--TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated_account', amount, itemName, targetXPlayer.name))
 		TriggerClientEvent('esx:showNotification', target,  _U('got_confiscated_account', amount, itemName, sourceXPlayer.name))
 
 	elseif itemType == 'item_weapon' then
 		if amount == nil then amount = 0 end
 		targetXPlayer.removeWeapon(itemName, amount)
-		sourceXPlayer.addWeapon   (itemName, amount)
+		--sourceXPlayer.addWeapon   (itemName, amount)
 
-		TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated_weapon', ESX.GetWeaponLabel(itemName), targetXPlayer.name, amount))
+		--TriggerClientEvent('esx:showNotification', _source, _U('you_confiscated_weapon', ESX.GetWeaponLabel(itemName), targetXPlayer.name, amount))
 		TriggerClientEvent('esx:showNotification', target,  _U('got_confiscated_weapon', ESX.GetWeaponLabel(itemName), amount, sourceXPlayer.name))
 	end
 end)
