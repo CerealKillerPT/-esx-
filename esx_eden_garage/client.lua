@@ -335,7 +335,7 @@ function ReturnVehicleMenu()
     		local vehicleName = GetDisplayNameFromVehicleModel(hashVehicule)
     		local labelvehicle
 
-    		labelvehicle = vehicleName..': Riprendi'
+    		labelvehicle = vehicleName..': 取出'
     	
 			table.insert(elements, {label =labelvehicle , value = v})
 			
