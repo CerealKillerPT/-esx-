@@ -29,7 +29,7 @@ function ShowJobListingMenu()
 		end
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'joblisting', {
-			title    = _U('徵才中心'),
+			title    = '徵才中心',
 			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
@@ -64,7 +64,7 @@ Citizen.CreateThread(function()
 
 			if distance < (Config.ZoneSize.x / 2) then
 				isInMarker = true
-				ESX.ShowHelpNotification('進入徵才中心')
+				ESX.ShowHelpNotification(_U('access_job_center'))
 			end
 		end
 
