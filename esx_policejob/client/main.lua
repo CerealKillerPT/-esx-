@@ -42,18 +42,6 @@ Citizen.CreateThread(function()
 	PlayerData = ESX.GetPlayerData()
 end)
 
-Citizen.CreateThread(function()
-    for i = 1, 32 do
-        Citizen.InvokeNative(0xDC0F817884CDD856, i, false)
-    end
-    while true do
-        Citizen.Wait(0)
-        if GetPlayerWantedLevel(PlayerId()) ~= 0 then
-            ClearPlayerWantedLevel(PlayerId())
-        end
-    end
-end)
-
 function cleanPlayer(playerPed)
 	SetPedArmour(playerPed, 0)
 	ClearPedBloodDamage(playerPed)
@@ -677,14 +665,9 @@ function OpenPoliceActionsMenu()
 		elements = {
 			{label = _U('citizen_interaction'),	value = 'citizen_interaction'},
 			{label = _U('vehicle_interaction'),	value = 'vehicle_interaction'},
-			{label = "Jail Menu",               value = 'jail_menu'},
 			{label = _U('object_spawner'),		value = 'object_spawner'}
 		}
 	}, function(data, menu)
-		
-		if data.current.value == 'jail_menu' then
-			TriggerEvent("esx-qalle-jail:openJailMenu")
-		end
 
 		if data.current.value == 'citizen_interaction' then
 			local elements = {
@@ -1633,7 +1616,7 @@ AddEventHandler('esx_policejob:handcuff', function()
 			DisablePlayerFiring(playerPed, true)
 			SetCurrentPedWeapon(playerPed, GetHashKey('WEAPON_UNARMED'), true) -- unarm player
 			SetPedCanPlayGestureAnims(playerPed, false)
-			FreezeEntityPosition(playerPed, true)
+			--FreezeEntityPosition(playerPed, true)
 			DisplayRadar(false)
 
 			if Config.EnableHandcuffTimer then
@@ -1655,7 +1638,7 @@ AddEventHandler('esx_policejob:handcuff', function()
 			SetEnableHandcuffs(playerPed, false)
 			DisablePlayerFiring(playerPed, false)
 			SetPedCanPlayGestureAnims(playerPed, true)
-			FreezeEntityPosition(playerPed, false)
+			--FreezeEntityPosition(playerPed, false)
 			DisplayRadar(true)
 		end
 	end)
@@ -2197,16 +2180,3 @@ function ImpoundVehicle(vehicle)
 	ESX.ShowNotification(_U('impound_successful'))
 	CurrentTask.Busy = false
 end
-
-function openPolice()
-	if PlayerData.job ~= nil and PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') and (GetGameTimer() - GUI.Time) > 150 then
-	  OpenPoliceActionsMenu()
-	  GUI.Time = GetGameTimer()
-	end
-  end
-  
-  function getJob()
-	if PlayerData.job ~= nil then
-	  return PlayerData.job.name
-	end
-  end

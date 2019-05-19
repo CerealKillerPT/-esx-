@@ -1361,14 +1361,14 @@ AddEventHandler('esx_gangjob:handcuff', function()
       TaskPlayAnim(playerPed, 'mp_arresting', 'idle', 8.0, -8, -1, 49, 0, 0, 0, 0)
       SetEnableHandcuffs(playerPed, true)
       SetPedCanPlayGestureAnims(playerPed, false)
-      FreezeEntityPosition(playerPed,  true)
+      --FreezeEntityPosition(playerPed,  true)
 
     else
 
       ClearPedSecondaryTask(playerPed)
       SetEnableHandcuffs(playerPed, false)
       SetPedCanPlayGestureAnims(playerPed,  true)
-      FreezeEntityPosition(playerPed, false)
+      --FreezeEntityPosition(playerPed, false)
 
     end
 

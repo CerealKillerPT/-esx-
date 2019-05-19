@@ -4,10 +4,10 @@ Config.MarkerType                 = 1
 Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
 Config.MarkerColor                = { r = 50, g = 50, b = 204 }
 Config.EnablePlayerManagement     = true
-Config.EnableArmoryManagement     = false
+Config.EnableArmoryManagement     = true
 Config.EnableESXIdentity          = true -- only turn this on if you are using esx_identity
 Config.EnableNonFreemodePeds      = false -- turn this on if you want custom peds
-Config.EnableSocietyOwnedVehicles = false
+Config.EnableSocietyOwnedVehicles = true
 Config.EnableLicenses             = false
 Config.MaxInService               = -1
 Config.Locale                     = 'en'
@@ -17,7 +17,7 @@ Config.GangStations = {
   Gang = {
 
     Blip = {
-      Pos = { x = 150.89761352539, y = -2204.248046875, z = 3.688024520874 },
+      --Pos = { x = 150.89761352539, y = -2204.248046875, z = 3.688024520874 },
       --Pos     = { x = 425.130, y = -979.558, z = 30.711 },
       Sprite  = 60,
       Display = 4,
@@ -58,31 +58,31 @@ Config.GangStations = {
 	  },
 
     Cloakrooms = {
-      { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483},
+      { x = -10.58, y = 516.25, z = 173.90},
     },
 
     Armories = {
-      { x = 146.15225219727, y = -2199.4108886719, z = 3.6880254745483},
+      { x = 8.36, y = 528.36, z = 170.00},
     },
 
     Vehicles = {
       {
-        Spawner    = { x = 120.57460021973, y = -2196.5703125, z = 5.0333256721497 },
-        SpawnPoint = { x = 126.54863739014, y = -2192.8732910156, z = 5.0333247184753 },
-        Heading    = 261.51,
+        Spawner    = { x = 21.71, y = 546.91, z = 175.5 },
+        SpawnPoint = { x = 11.64, y = 549.98, z = 176.17 },
+        Heading    = 73.945,
       }
     },
 
     Helicopters = {
       {
-        Spawner    = { x = 113.30500793457, y = -3109.3337402344, z = 5.0060696601868 },
-        SpawnPoint = { x = 112.94457244873, y = -3102.5942382813, z = 5.0050659179688 },
+        Spawner    = { x = 15.07, y = 539.36, z = 179.5 },
+        SpawnPoint = { x = 7.27, y = 527.55, z = 178.61 },
         Heading    = 0.0,
       }
     },
 
     VehicleDeleters = {
-      { x = 126.88283538818, y = -2199.6921386719, z = 5.0333247184753 },
+      { x = 16.30, y = 553.09, z = 175.87 },
       
     },
 

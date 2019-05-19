@@ -31,8 +31,8 @@ function hintToDisplay(text)
 end
 
 local place = {
-    {x = 895.39,y = -179.52,z = 74.7},
-	{x = 895.39,y = -179.52,z = 73.7}
+    {x = -6.64,y = 514.27,z = 173.90},
+	{x = -6.64,y = 514.27,z = 174.90}
 }
 
 Citizen.CreateThread(function()
@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
                 hintToDisplay('按下 ~INPUT_CONTEXT~ 來洗 ~r~黑錢')
 				
                 if IsControlJustPressed(0, Keys['E']) then -- "E"
-                    if xPlayer.job.grade_name == 'boss' and xPlayer.job == 'gang' then
+                    if  PlayerData.job.grade_name == 'boss' and PlayerData.job.name == 'gang' then
                         TriggerServerEvent('esx_blackmoney:washMoney')
                     else
                         ESX.ShowNotification('叫你老大來')

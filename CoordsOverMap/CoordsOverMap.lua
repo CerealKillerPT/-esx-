@@ -5,7 +5,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 		local playerPos = GetEntityCoords(GetPlayerPed(-1))
 		local playerHeading = GetEntityHeading(GetPlayerPed(-1))
-		Text("X: " .. math.ceil(playerPos.x) .." Y: " .. math.ceil(playerPos.y) .." Z: " .. math.ceil(playerPos.z))
+		Text("X: " .. string.format("%.2f", playerPos.x) .." Y: " .. string.format("%.2f", playerPos.y) .." Z: " .. string.format("%.2f", playerPos.z) .. "方位: " .. playerHeading)
 	end
 end)
 

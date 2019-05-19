@@ -73,7 +73,7 @@ Citizen.CreateThread(function()
   while true do
     Citizen.Wait(0)
     local ped = GetPlayerPed(-1)
-
+    
     if IsDriver() and hasMeterAppropriateJob() then  --允許UBER跳表
       meterOwner = true
 

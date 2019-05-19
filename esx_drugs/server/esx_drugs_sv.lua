@@ -48,12 +48,12 @@ local function HarvestXanax(source)
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
-			local xanax = xPlayer.getInventoryItem('xanax')
+			local coke = xPlayer.getInventoryItem('coke')
 
-			if xanax.limit ~= -1 and xanax.count >= xanax.limit then
-				TriggerClientEvent('esx:showNotification', source, _U('inv_full_xanax'))
+			if coke.limit ~= -1 and coke.count >= coke.limit then
+				TriggerClientEvent('esx:showNotification', source, _U('inv_full_coke'))
 			else
-				xPlayer.addInventoryItem('xanax', 1)
+				xPlayer.addInventoryItem('coke', 1)
 				HarvestXanax(source)
 			end
 
@@ -96,16 +96,16 @@ local function TransformXanax(source)
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
-			local xanaxQuantity = xPlayer.getInventoryItem('xanax').count
-			local poochQuantity = xPlayer.getInventoryItem('xanax_pooch').count
+			local xanaxQuantity = xPlayer.getInventoryItem('coke').count
+			local poochQuantity = xPlayer.getInventoryItem('coke_pooch').count
 
-			if poochQuantity > 35 then
+			if poochQuantity > 150 then
 				TriggerClientEvent('esx:showNotification', source, _U('too_many_pouches'))
 			elseif xanaxQuantity < 5 then
 				TriggerClientEvent('esx:showNotification', source, _U('not_enough_xanax'))
 			else
-				xPlayer.removeInventoryItem('xanax', 5)
-				xPlayer.addInventoryItem('xanax_pooch', 1)
+				xPlayer.removeInventoryItem('coke', 5)
+				xPlayer.addInventoryItem('coke_pooch', 1)
 			
 				TransformXanax(source)
 			end
@@ -150,12 +150,12 @@ local function SellXanax(source)
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
-			local poochQuantity = xPlayer.getInventoryItem('xanax_pooch').count
+			local poochQuantity = xPlayer.getInventoryItem('coke_pooch').count
 
 			if poochQuantity == 0 then
 				TriggerClientEvent('esx:showNotification', source, _U('no_pouches_sale'))
 			else
-				xPlayer.removeInventoryItem('xanax_pooch', 1)
+				xPlayer.removeInventoryItem('coke_pooch', 1)
 				if CopsConnected == 0 then
                     xPlayer.addAccountMoney('black_money', 350)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_xanax'))
@@ -270,7 +270,7 @@ local function TransformMeth(source)
 			local methQuantity = xPlayer.getInventoryItem('meth').count
 			local poochQuantity = xPlayer.getInventoryItem('meth_pooch').count
 
-			if poochQuantity > 35 then
+			if poochQuantity > 150 then
 				TriggerClientEvent('esx:showNotification', source, _U('too_many_pouches'))
 			elseif methQuantity < 5 then
 				TriggerClientEvent('esx:showNotification', source, _U('not_enough_meth'))
@@ -443,7 +443,7 @@ local function TransformWeed(source)
 			local weedQuantity = xPlayer.getInventoryItem('weed').count
 			local poochQuantity = xPlayer.getInventoryItem('weed_pooch').count
 
-			if poochQuantity > 35 then
+			if poochQuantity > 150 then
 				TriggerClientEvent('esx:showNotification', source, _U('too_many_pouches'))
 			elseif weedQuantity < 5 then
 				TriggerClientEvent('esx:showNotification', source, _U('not_enough_weed'))
@@ -561,12 +561,12 @@ local function HarvestHeroin(source)
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
-			local heroin = xPlayer.getInventoryItem('heroin')
+			local opium = xPlayer.getInventoryItem('opium')
 
-			if heroin.limit ~= -1 and heroin.count >= heroin.limit then
+			if opium.limit ~= -1 and opium.count >= opium.limit then
 				TriggerClientEvent('esx:showNotification', source, _U('inv_full_heroin'))
 			else
-				xPlayer.addInventoryItem('heroin', 1)
+				xPlayer.addInventoryItem('opium', 1)
 				HarvestHeroin(source)
 			end
 
@@ -609,16 +609,16 @@ local function TransformHeroin(source)
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
-			local heroinQuantity = xPlayer.getInventoryItem('heroin').count
-			local poochQuantity = xPlayer.getInventoryItem('heroin_pooch').count
+			local heroinQuantity = xPlayer.getInventoryItem('opium').count
+			local poochQuantity = xPlayer.getInventoryItem('opium_pooch').count
 
-			if poochQuantity > 35 then
+			if poochQuantity > 150 then
 				TriggerClientEvent('esx:showNotification', source, _U('too_many_pouches'))
 			elseif heroinQuantity < 5 then
 				TriggerClientEvent('esx:showNotification', source, _U('not_enough_heroin'))
 			else
-				xPlayer.removeInventoryItem('heroin', 5)
-				xPlayer.addInventoryItem('heroin_pooch', 1)
+				xPlayer.removeInventoryItem('opium', 5)
+				xPlayer.addInventoryItem('opium_pooch', 1)
 			
 				TransformHeroin(source)
 			end
@@ -662,12 +662,12 @@ local function SellHeroin(source)
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
-			local poochQuantity = xPlayer.getInventoryItem('heroin_pooch').count
+			local poochQuantity = xPlayer.getInventoryItem('opium_pooch').count
 
 			if poochQuantity == 0 then
 				TriggerClientEvent('esx:showNotification', source, _U('no_pouches_sale'))
 			else
-				xPlayer.removeInventoryItem('heroin_pooch', 1)
+				xPlayer.removeInventoryItem('opium_pooch', 1)
 				if CopsConnected == 0 then
                     xPlayer.addAccountMoney('black_money', 350)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_heroin'))
@@ -725,14 +725,14 @@ AddEventHandler('esx_drugs:GetUserInventory', function(currentZone)
     local xPlayer  = ESX.GetPlayerFromId(_source)
     TriggerClientEvent('esx_drugs:ReturnInventory', 
     	_source, 
-    	xPlayer.getInventoryItem('xanax').count, 
-		xPlayer.getInventoryItem('xanax_pooch').count,
+    	xPlayer.getInventoryItem('coke').count, 
+		xPlayer.getInventoryItem('coke_pooch').count,
 		xPlayer.getInventoryItem('meth').count, 
 		xPlayer.getInventoryItem('meth_pooch').count, 
 		xPlayer.getInventoryItem('weed').count, 
 		xPlayer.getInventoryItem('weed_pooch').count, 
-		xPlayer.getInventoryItem('heroin').count, 
-		xPlayer.getInventoryItem('heroin_pooch').count,
+		xPlayer.getInventoryItem('opium').count, 
+		xPlayer.getInventoryItem('opium_pooch').count,
 		xPlayer.job.name, 
 		currentZone
     )

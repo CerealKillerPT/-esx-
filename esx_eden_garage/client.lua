@@ -137,12 +137,13 @@ function ListVehiclesMenu()
     		local labelvehicle
 			local plate = v.plate
 
-    		if(v.state) and v.job == nil then
+    		if(v.state) and v.job ~= 'police' and v.job ~= 'ambulance' then
     		labelvehicle = vehicleName.. ' (' .. plate .. '): 在車庫'
-			elseif (v.state) and v.job == nil then
-    		labelvehicle = vehicleName.. ' (' .. plate .. '): 已取出'
-    		end	
 			table.insert(elements, {label =labelvehicle , value = v})
+			elseif (v.state) and v.job ~= 'police' and v.job ~= 'ambulance' then
+    		labelvehicle = vehicleName.. ' (' .. plate .. '): 已取出'
+			table.insert(elements, {label =labelvehicle , value = v})
+    		end	
 			
 		end
 		local c = 0

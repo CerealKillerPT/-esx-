@@ -44,7 +44,7 @@ function AddPlayerToScoreboard(xPlayer, update)
 
 	connectedPlayers[playerId] = {}
 	connectedPlayers[playerId].ping = GetPlayerPing(playerId)
-	connectedPlayers[playerId].id = xPlayer.id                    --嘗試看看能不能顯示ID-20190516
+	connectedPlayers[playerId].id = xPlayer.source                   --嘗試看看能不能顯示ID-20190516
 	connectedPlayers[playerId].name = xPlayer.getName()
 	connectedPlayers[playerId].job = xPlayer.job.name
 
