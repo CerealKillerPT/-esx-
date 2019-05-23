@@ -30,6 +30,7 @@ function hintToDisplay(text)
 	DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 end
 
+--這個是洗錢的地點
 local place = {
     {x = -6.64,y = 514.27,z = 173.90},
 	{x = -6.64,y = 514.27,z = 174.90}
@@ -60,7 +61,7 @@ Citizen.CreateThread(function()
                 hintToDisplay('按下 ~INPUT_CONTEXT~ 來洗 ~r~黑錢')
 				
                 if IsControlJustPressed(0, Keys['E']) then -- "E"
-                    if  PlayerData.job.grade_name == 'boss' and PlayerData.job.name == 'gang' then
+                    if  PlayerData.job.grade_name == 'boss' and PlayerData.job.name == 'gang' then  --這行是限制職業與職業等級
                         TriggerServerEvent('esx_blackmoney:washMoney')
                     else
                         ESX.ShowNotification('叫你老大來')

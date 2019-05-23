@@ -148,7 +148,6 @@ RegisterServerEvent('esx_phone:send')
 AddEventHandler('esx_phone:send', function(phoneNumber, message, anon, position)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-
 	print(('esx_phone: MESSAGE => %s@%s: %s'):format(xPlayer.name, phoneNumber, message))
 
 	if PhoneNumbers[phoneNumber] ~= nil then

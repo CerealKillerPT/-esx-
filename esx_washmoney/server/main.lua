@@ -18,7 +18,7 @@ AddEventHandler('esx_blackmoney:washMoney', function()
 		local amount = xPlayer.getAccount('black_money').money
 		xPlayer.addMoney(amount)
 		xPlayer.removeAccountMoney('black_money', amount)
-		notification('You ~g~washed~s~'.. amount .. '~r~dirty money')
+		notification('你 ~g~洗了~s~'.. amount .. '~r~黑錢')
 	end
 end)
 
